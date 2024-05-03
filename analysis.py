@@ -3,11 +3,13 @@
 # analysis of the well-known Fisher’s Iris data set
 
 # Importing modules for use in analysis
-import pandas as pd
-import numpy as np
+import pandas as pd # for data manipulation and analysis
+import numpy as np # 
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression as lr
+import warnings # to ignore Seaborn pairplot warning 'FutureWarning: use_inf_as_na'
+warnings.filterwarnings('ignore')
 
 # Set Seaborn visual theme for plots
 sns.set()
@@ -26,9 +28,8 @@ iris_df = pd.concat([x, y], axis=1)
 # Export dataframe as CSV for review
 iris_df.to_csv('iris.csv', index=False)
 
-# Create file, will use to write overview to
-# https://www.w3schools.com/python/python_file_write.asp
-# Will run some code to write overview data into txt file
+# Create textfile https://www.w3schools.com/python/python_file_write.asp
+# Will run some code to write overview data into textfile
 textfile = open("Iris Dataset Overview.txt", "w")
 textfile.write("Iris Dataset Overview\n*********************\n\n"
                "This file contains a preliminary overview of some of the key data points in Fisher's Iris flowers dataset.\n"
@@ -53,8 +54,7 @@ textfile.write("\n\nLet's double-check to make sure that it worked:\n\n")
 textfile.write(str(iris_df["class"].value_counts()))
 textfile.write("\n\nPerfect! Just what I wanted.\n\n")
 
-# Creating histograms for all four quantitative variables
-# To see distribution
+# Creating histograms for all four quantitative variables to see distribution
 # Create a figure and a set of subplots
 fig, axs = plt.subplots(2, 2, figsize=(20, 10))
 axs[0,0].hist(iris_df['sepal length']) # Plotting the histogram for Sepal Length
@@ -80,3 +80,33 @@ plt.clf()
 sns.scatterplot(x='petal length', y='petal width', hue='class', data=iris_df)
 plt.title("Petal Length v Petal Width")
 plt.savefig("Iris - scatterplot Petal Length v Petal Width")
+
+# Creating Seaborn pairplot to look at scatter plots across all variables with Class as hue
+sns.pairplot(iris_df, hue="class")
+plt.savefig("Iris - scatterplot Seaborn pairplot")
+
+# Create separate dataframes for each class
+setosa_df = iris_df[iris_df['class'] == 'Setosa']
+versicolor_df = iris_df[iris_df['class'] == 'Versicolor']
+virginica_df = iris_df[iris_df['class'] == 'Virginica']
+
+# Sending some further overview to textfile
+# Will look at key data points for each class
+textfile.write("Let's look at the key data points for each class of flower. Mean will tell us the average value, while Median will show us the middle value.\n\n")
+textfile.write("Setosa:\n"
+               f"Sepal Length - Mean: {round(setosa_df['sepal length'].mean(),2)} Median: {setosa_df['sepal length'].median()}\n"
+               f"Sepal Width  - Mean: {round(setosa_df['sepal width'].mean(),2)} Median: {setosa_df['sepal width'].median()}\n"
+               f"Petal Length - Mean: {round(setosa_df['petal length'].mean(),2)} Median: {setosa_df['petal length'].median()}\n"
+               f"Petal Width  - Mean: {round(setosa_df['petal width'].mean(),2)} Median: {setosa_df['petal width'].median()}\n\n"
+               "Versicolor:\n"
+               f"Sepal Length - Mean: {round(versicolor_df['sepal length'].mean(),2)} Median: {versicolor_df['sepal length'].median()}\n"
+               f"Sepal Width  - Mean: {round(versicolor_df['sepal width'].mean(),2)} Median: {versicolor_df['sepal width'].median()}\n"
+               f"Petal Length - Mean: {round(versicolor_df['petal length'].mean(),2)} Median: {versicolor_df['petal length'].median()}\n"
+               f"Petal Width  - Mean: {round(versicolor_df['petal width'].mean(),2)} Median: {versicolor_df['petal width'].median()}\n\n"
+               "Virginica:\n"
+               f"Sepal Length - Mean: {round(virginica_df['sepal length'].mean(),2)} Median: {virginica_df['sepal length'].median()}\n"
+               f"Sepal Width  - Mean: {round(virginica_df['sepal width'].mean(),2)} Median: {virginica_df['sepal width'].median()}\n"
+               f"Petal Length - Mean: {round(virginica_df['petal length'].mean(),2)} Median: {virginica_df['petal length'].median()}\n"
+               f"Petal Width  - Mean: {round(virginica_df['petal width'].mean(),2)} Median: {virginica_df['petal width'].median()}\n\n"
+               )
+

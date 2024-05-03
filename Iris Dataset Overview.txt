@@ -53,3 +53,23 @@ Name: count, dtype: int64
 
 Perfect! Just what I wanted.
 
+Let's look at the key data points for each class of flower. Mean will tell us the average value, while Median will show us the middle value.
+
+Setosa:
+Sepal Length - Mean: 5.01 Median: 5.0
+Sepal Width  - Mean: 3.42 Median: 3.4
+Petal Length - Mean: 1.46 Median: 1.5
+Petal Width  - Mean: 0.24 Median: 0.2
+
+Versicolor:
+Sepal Length - Mean: 5.94 Median: 5.9
+Sepal Width  - Mean: 2.77 Median: 2.8
+Petal Length - Mean: 4.26 Median: 4.35
+Petal Width  - Mean: 1.33 Median: 1.3
+
+Virginica:
+Sepal Length - Mean: 6.59 Median: 6.5
+Sepal Width  - Mean: 2.97 Median: 3.0
+Petal Length - Mean: 5.55 Median: 5.55
+Petal Width  - Mean: 2.03 Median: 2.0
+
