@@ -92,147 +92,52 @@ virginica_df = iris_df[iris_df['class'] == 'Virginica']
 
 # Sending some further overview to textfile
 # Will look at key data points for each class
-textfile.write("Let's look at the key data points for each class of flower. Mean will tell us the average value, while Median will show us the middle value.\n\n")
-textfile.write("Setosa:\n"
-               f"Sepal Length - Mean: {round(setosa_df['sepal length'].mean(),1)} Median: {round(setosa_df['sepal length'].median(),1)}\n"
-               f"Sepal Width  - Mean: {round(setosa_df['sepal width'].mean(),1)} Median: {round(setosa_df['sepal width'].median(),1)}\n"
-               f"Petal Length - Mean: {round(setosa_df['petal length'].mean(),1)} Median: {round(setosa_df['petal length'].median(),1)}\n"
-               f"Petal Width  - Mean: {round(setosa_df['petal width'].mean(),1)} Median: {round(setosa_df['petal width'].median(),1)}\n\n"
-               "Versicolor:\n"
-               f"Sepal Length - Mean: {round(versicolor_df['sepal length'].mean(),1)} Median: {round(versicolor_df['sepal length'].median(),1)}\n"
-               f"Sepal Width  - Mean: {round(versicolor_df['sepal width'].mean(),1)} Median: {round(versicolor_df['sepal width'].median(),1)}\n"
-               f"Petal Length - Mean: {round(versicolor_df['petal length'].mean(),1)} Median: {round(versicolor_df['petal length'].median(),1)}\n"
-               f"Petal Width  - Mean: {round(versicolor_df['petal width'].mean(),1)} Median: {round(versicolor_df['petal width'].median(),1)}\n\n"
-               "Virginica:\n"
-               f"Sepal Length - Mean: {round(virginica_df['sepal length'].mean(),1)} Median: {round(virginica_df['sepal length'].median(),1)}\n"
-               f"Sepal Width  - Mean: {round(virginica_df['sepal width'].mean(),1)} Median: {round(virginica_df['sepal width'].median(),1)}\n"
-               f"Petal Length - Mean: {round(virginica_df['petal length'].mean(),1)} Median: {round(virginica_df['petal length'].median(),1)}\n"
-               f"Petal Width  - Mean: {round(virginica_df['petal width'].mean(),1)} Median: {round(virginica_df['petal width'].median(),1)}\n\n"
+textfile.write("Let's look at the key data points for each class of flower. Min will show the minimum value, Max the maximum, Mean the average value, and Median will show us the middle value.\n\n")
+textfile.write("\tSetosa:\t\t\tMin\t\tMax\t\tMean\tMedian\n"
+               f"\tSepal Length -\t{(setosa_df['sepal length'].min()):.1f}\t\t{(setosa_df['sepal length'].max()):.1f}\t\t{(setosa_df['sepal length'].mean()):.1f}\t\t{(setosa_df['sepal length'].median()):.1f}\n"
+               f"\tSepal Width  -\t{(setosa_df['sepal width'].min()):.1f}\t\t{(setosa_df['sepal width'].max()):.1f}\t\t{(setosa_df['sepal width'].mean()):.1f}\t\t{(setosa_df['sepal width'].median()):.1f}\n"
+               f"\tPetal Length -\t{(setosa_df['petal length'].min()):.1f}\t\t{(setosa_df['petal length'].max()):.1f}\t\t{(setosa_df['petal length'].mean()):.1f}\t\t{(setosa_df['petal length'].median()):.1f}\n"
+               f"\tPetal Width  -\t{(setosa_df['petal width'].min()):.1f}\t\t{(setosa_df['petal width'].max()):.1f}\t\t{(setosa_df['petal width'].mean()):.1f}\t\t{(setosa_df['petal width'].median()):.1f}\n\n"
+               "\tVersicolor:\n"
+               f"\tSepal Length -\t{(versicolor_df['sepal length'].min()):.1f}\t\t{(versicolor_df['sepal length'].max()):.1f}\t\t{(versicolor_df['sepal length'].mean()):.1f}\t\t{(versicolor_df['sepal length'].median()):.1f}\n"
+               f"\tSepal Width  -\t{(versicolor_df['sepal width'].min()):.1f}\t\t{(versicolor_df['sepal width'].max()):.1f}\t\t{(versicolor_df['sepal width'].mean()):.1f}\t\t{(versicolor_df['sepal width'].median()):.1f}\n"
+               f"\tPetal Length -\t{(versicolor_df['petal length'].min()):.1f}\t\t{(versicolor_df['petal length'].max()):.1f}\t\t{(versicolor_df['petal length'].mean()):.1f}\t\t{(versicolor_df['petal length'].median()):.1f}\n"
+               f"\tPetal Width  -\t{(versicolor_df['petal width'].min()):.1f}\t\t{(versicolor_df['petal width'].max()):.1f}\t\t{(versicolor_df['petal width'].mean()):.1f}\t\t{(versicolor_df['petal width'].median()):.1f}\n\n"
+               "\tVirginica:\n"
+               f"\tSepal Length -\t{(virginica_df['sepal length'].min()):.1f}\t\t{(virginica_df['sepal length'].max()):.1f}\t\t{(virginica_df['sepal length'].mean()):.1f}\t\t{(virginica_df['sepal length'].median()):.1f}\n"
+               f"\tSepal Width  -\t{(virginica_df['sepal width'].min()):.1f}\t\t{(virginica_df['sepal width'].max()):.1f}\t\t{(virginica_df['sepal width'].mean()):.1f}\t\t{(virginica_df['sepal width'].median()):.1f}\n"
+               f"\tPetal Length -\t{(virginica_df['petal length'].min()):.1f}\t\t{(virginica_df['petal length'].max()):.1f}\t\t{(virginica_df['petal length'].mean()):.1f}\t\t{(virginica_df['petal length'].median()):.1f}\n"
+               f"\tPetal Width  -\t{(virginica_df['petal width'].min()):.1f}\t\t{(virginica_df['petal width'].max()):.1f}\t\t{(virginica_df['petal width'].mean()):.1f}\t\t{(virginica_df['petal width'].median()):.1f}\n\n"
                )
 
-# Looking at correlations in the overall dataset, and then on a class-by-class basis
-# Create a figure with subplots
+# Create heatmap of correlations
 plt.clf()
-fig, axs = plt.subplots(4, 2, figsize=(12, 24))
-
-# Iris Sepal subplot
-x_irisseplen = iris_df['sepal length']
-y_irissepwid = iris_df['sepal width']
-axs[0,0].scatter(x_irisseplen, y_irissepwid)
-m_irissep, b_irissep = np.polyfit(x_irisseplen, y_irissepwid, 1)
-axs[0,0].plot(x_irisseplen, m_irissep * x_irisseplen + b_irissep, color='red', label='Trendline')
-correlation_coefficient_irissep = np.corrcoef(x_irisseplen, y_irissepwid)[0, 1]
-correlation_label_irissep = str(f"Correlation: {round(correlation_coefficient_irissep,2)}")
-axs[0,0].legend([correlation_label_irissep, 'Trendline'])
-axs[0,0].set_xlabel('Sepal Length', fontsize=10)
-axs[0,0].set_ylabel('Sepal Width', fontsize=10)
-axs[0,0].set_title('Overall Iris Dataset')
-
-# Iris Petal subplot
-x_irispetlen = iris_df['petal length']
-y_irispetwid = iris_df['petal width']
-axs[0,1].scatter(x_irispetlen, y_irispetwid)
-m_irispet, b_irispet = np.polyfit(x_irispetlen, y_irispetwid, 1)
-axs[0,1].plot(x_irispetlen, m_irispet * x_irispetlen + b_irispet, color='red', label='Trendline')
-correlation_coefficient_irispet = np.corrcoef(x_irispetlen, y_irispetwid)[0, 1]
-correlation_label_irispet = str(f"Correlation: {round(correlation_coefficient_irispet,2)}")
-axs[0,1].legend([correlation_label_irispet, 'Trendline'])
-axs[0,1].set_xlabel('Petal Length', fontsize=10)
-axs[0,1].set_ylabel('Petal Width', fontsize=10)
-axs[0,1].set_title('Overall Iris Dataset')
-
-# Setosa Sepal subplot
-x_setseplen = setosa_df['sepal length']
-y_setsepwid = setosa_df['sepal width']
-axs[1,0].scatter(x_setseplen, y_setsepwid)
-m_setsep, b_setsep = np.polyfit(x_setseplen, y_setsepwid, 1)
-axs[1,0].plot(x_setseplen, m_setsep * x_setseplen + b_setsep, color='red', label='Trendline')
-correlation_coefficient_setsep = np.corrcoef(x_setseplen, y_setsepwid)[0, 1]
-correlation_label_setsep = str(f"Correlation: {round(correlation_coefficient_setsep,2)}")
-axs[1,0].legend([correlation_label_setsep, 'Trendline'])
-axs[1,0].set_xlabel('Sepal Length', fontsize=10)
-axs[1,0].set_ylabel('Sepal Width', fontsize=10)
-axs[1,0].set_title('Setosa')
-
-# Setosa Petal subplot
-x_setpetlen = setosa_df['petal length']
-y_setpetwid = setosa_df['petal width']
-axs[1,1].scatter(x_setpetlen, y_setpetwid)
-m_setpet, b_setpet = np.polyfit(x_setpetlen, y_setpetwid, 1)
-axs[1,1].plot(x_setpetlen, m_setpet * x_setpetlen + b_setpet, color='red', label='Trendline')
-correlation_coefficient_setpet = np.corrcoef(x_setpetlen, y_setpetwid)[0, 1]
-correlation_label_setpet = str(f"Correlation: {round(correlation_coefficient_setpet,2)}")
-axs[1,1].legend([correlation_label_setpet, 'Trendline'])
-axs[1,1].set_xlabel('Petal Length', fontsize=10)
-axs[1,1].set_ylabel('Petal Width', fontsize=10)
-axs[1,1].set_title('Setosa')
-
-# Versicolor Sepal subplot
-x_verseplen = versicolor_df['sepal length']
-y_versepwid = versicolor_df['sepal width']
-axs[2,0].scatter(x_verseplen, y_versepwid)
-m_versep, b_versep = np.polyfit(x_verseplen, y_versepwid, 1)
-axs[2,0].plot(x_verseplen, m_versep * x_verseplen + b_versep, color='red', label='Trendline')
-correlation_coefficient_versep = np.corrcoef(x_verseplen, y_versepwid)[0, 1]
-correlation_label_versep = str(f"Correlation: {round(correlation_coefficient_versep,2)}")
-axs[2,0].legend([correlation_label_versep, 'Trendline'])
-axs[2,0].set_xlabel('Sepal Length', fontsize=10)
-axs[2,0].set_ylabel('Sepal Width', fontsize=10)
-axs[2,0].set_title('Versicolor')
-
-# Versicolor Petal subplot
-x_verpetlen = versicolor_df['petal length']
-y_verpetwid = versicolor_df['petal width']
-axs[2,1].scatter(x_verpetlen, y_verpetwid)
-m_verpet, b_verpet = np.polyfit(x_verpetlen, y_verpetwid, 1)
-axs[2,1].plot(x_verpetlen, m_verpet * x_verpetlen + b_verpet, color='red', label='Trendline')
-correlation_coefficient_verpet = np.corrcoef(x_verpetlen, y_verpetwid)[0, 1]
-correlation_label_verpet = str(f"Correlation: {round(correlation_coefficient_verpet,2)}")
-axs[2,1].legend([correlation_label_verpet, 'Trendline'])
-axs[2,1].set_xlabel('Petal Length', fontsize=10)
-axs[2,1].set_ylabel('Petal Width', fontsize=10)
-axs[2,1].set_title('Versicolor')
-
-# Virginica Sepal subplot
-x_virseplen = virginica_df['sepal length']
-y_virsepwid = virginica_df['sepal width']
-axs[3,0].scatter(x_virseplen, y_virsepwid)
-m_virsep, b_virsep = np.polyfit(x_virseplen, y_virsepwid, 1)
-axs[3,0].plot(x_virseplen, m_virsep * x_virseplen + b_virsep, color='red', label='Trendline')
-correlation_coefficient_virsep = np.corrcoef(x_virseplen, y_virsepwid)[0, 1]
-correlation_label_virsep = str(f"Correlation: {round(correlation_coefficient_virsep,2)}")
-axs[3,0].legend([correlation_label_virsep, 'Trendline'])
-axs[3,0].set_xlabel('Sepal Length', fontsize=10)
-axs[3,0].set_ylabel('Sepal Width', fontsize=10)
-axs[3,0].set_title('Virginica')
-
-# Virginica Petal subplot
-x_virpetlen = virginica_df['petal length']
-y_virpetwid = virginica_df['petal width']
-axs[3,1].scatter(x_virpetlen, y_virpetwid)
-m_virpet, b_virpet = np.polyfit(x_virpetlen, y_virpetwid, 1)
-axs[3,1].plot(x_virpetlen, m_virpet * x_virpetlen + b_virpet, color='red', label='Trendline')
-correlation_coefficient_virpet = np.corrcoef(x_virpetlen, y_virpetwid)[0, 1]
-correlation_label_virpet = str(f"Correlation: {round(correlation_coefficient_virpet,2)}")
-axs[3,1].legend([correlation_label_virpet, 'Trendline'])
-axs[3,1].set_xlabel('Petal Length', fontsize=10)
-axs[3,1].set_ylabel('Petal Width', fontsize=10)
-axs[3,1].set_title('Virginica')
-
-plt.savefig("Iris - correlation coefficients")
+iriscorr_df = iris_df.drop(columns=['class'])
+corr = iriscorr_df.corr()
+fig, ax = plt.subplots(figsize=(10,8))
+sns.heatmap(corr, annot=True, ax=ax, cmap = 'coolwarm')
+plt.savefig("Iris - correlation heatmap")
 
 # Write correlation values to textfile
+sepal_corr = iris_df['sepal length'].corr(iris_df['sepal width'])
+petal_corr = iris_df['petal length'].corr(iris_df['petal width'])
+setsepal_corr = setosa_df['sepal length'].corr(setosa_df['sepal width'])
+setpetal_corr = setosa_df['petal length'].corr(setosa_df['petal width'])
+versepal_corr = versicolor_df['sepal length'].corr(versicolor_df['sepal width'])
+verpetal_corr = versicolor_df['petal length'].corr(versicolor_df['petal width'])
+virsepal_corr = virginica_df['sepal length'].corr(virginica_df['sepal width'])
+virpetal_corr = virginica_df['petal length'].corr(virginica_df['petal width'])
 textfile.write("I have generated the correlation coefficients in my code, so I will also note the values here in my overview text:\n\n")
-textfile.write("Overall:\n"
-               f"Sepal Length v Width correlation: {round(correlation_coefficient_irissep,2)}\n"
-               f"Petal Length v Width correlation: {round(correlation_coefficient_irispet,2)}\n\n"
-               "Setosa:\n"
-               f"Sepal Length v Width correlation: {round(correlation_coefficient_setsep,2)}\n"
-               f"Petal Length v Width correlation: {round(correlation_coefficient_setpet,2)}\n\n"
-               "Versicolor:\n"
-               f"Sepal Length v Width correlation: {round(correlation_coefficient_versep,2)}\n"
-               f"Petal Length v Width correlation: {round(correlation_coefficient_verpet,2)}\n\n"
-               "Virginica:\n"
-               f"Sepal Length v Width correlation: {round(correlation_coefficient_virsep,2)}\n"
-               f"Petal Length v Width correlation: {round(correlation_coefficient_virpet,2)}\n\n"
+textfile.write("\tOverall:\n"
+               f"\tSepal Length v Width correlation:\t{(sepal_corr):>5.2f}\n"
+               f"\tPetal Length v Width correlation:\t{(petal_corr):>5.2f}\n\n"
+               "\tSetosa:\n"
+               f"\tSepal Length v Width correlation:\t{(setsepal_corr):>5.2f}\n"
+               f"\tPetal Length v Width correlation:\t{(setpetal_corr):>5.2f}\n\n"
+               "\tVersicolor:\n"
+               f"\tSepal Length v Width correlation:\t{(versepal_corr):>5.2f}\n"
+               f"\tPetal Length v Width correlation:\t{(verpetal_corr):>5.2f}\n\n"
+               "\tVirginica:\n"
+               f"\tSepal Length v Width correlation:\t{(virsepal_corr):>5.2f}\n"
+               f"\tPetal Length v Width correlation:\t{(virpetal_corr):>5.2f}\n\n"
                )
