@@ -35,9 +35,9 @@ textfile.write("Iris Dataset Overview\n*********************\n\n"
                "This file contains a preliminary overview of some of the key data points in Fisher's Iris flowers dataset.\n"
                "I will begin by taking a look at the data structure and data types.\n\n"
                )
-textfile.write("The head() function will show me the first five rows of the dataframe:\n")
+textfile.write("The head() function will show me the first five rows of the dataframe:\n\n")
 textfile.write(str(iris_df.head()))
-textfile.write("\n\ndtypes will show me the data types within the dataframe:\n")
+textfile.write("\n\ndtypes will show me the data types within the dataframe:\n\n")
 textfile.write(str(iris_df.dtypes))
 textfile.write("\n\nI can see that we have four measurement variables that are Float64 values, and a Class variable that refers to the type of flower.\n"
                "I will now use the describe method to get an overview of the data within the quantitative variables.\n\n")
