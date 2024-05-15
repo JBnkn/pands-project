@@ -10,7 +10,7 @@ In 1936, British statistician (and mathematician, and biologist, and geneticist,
 
 <img src="https://content.codecademy.com/programs/machine-learning/k-means/iris.svg" alt="A image indicating the petal and sepal for the Versicolor, Setosa, and Virginica species of Iris flower. Credit: https://www.codecademy.com/" width="600">
 
-With this data, Fisher developed a linear discriminant model to distinguish the species from each other. As a clean and relatively simple dataset, it is a useful sandbox for those of us taking our first steps into the world of Data Science.
+With this data, Fisher developed a linear discriminant model to distinguish the species from each other. As a clean, complete, and relatively simple dataset, it is a useful sandbox for those of us taking our first steps into the world of Data Science.
 
 ## Modules
 I made use of the following modules as part of this project.
@@ -19,3 +19,13 @@ I made use of the following modules as part of this project.
 - [seaborn](https://seaborn.pydata.org/tutorial/introduction.html)
 - [numpy](https://numpy.org/)
 - [scikit-learn](https://scikit-learn.org/stable/)
+
+## References
+- https://www.w3schools.com/python/python_file_write.asp
+- https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html
+- https://seaborn.pydata.org/generated/seaborn.pairplot.html
+- https://seaborn.pydata.org/generated/seaborn.heatmap.html
+- https://numpy.org/
+- https://scikit-learn.org/stable/
+- I occasionally made use of [ChatGPT](https://chat.openai.com/) throughout the course of my projects. It was a useful tool for debugging code that wasn't working for me and I had reached a dead end with the documentation. When I found complex pieces of code elsewhere, it was helpful at explaining the code line-by-line which aided my comprehension of the code.
+- I made use of a variety the YouTube videos in the course of my research, including but not limited to [b001](https://www.youtube.com/@b001), [Indently](https://www.youtube.com/@Indently), [Bro Code](https://www.youtube.com/@BroCodez), and [Koolac](https://www.youtube.com/@Koolac)
