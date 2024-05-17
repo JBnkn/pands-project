@@ -13,7 +13,12 @@ In 1936, British statistician (and mathematician, and biologist, and geneticist,
 With this data, Fisher developed a linear discriminant model to distinguish the species from each other. As a clean, complete, and relatively simple dataset, it is a useful sandbox for those of us taking our first steps into the world of Data Science.
 
 ## The Data
-The data is comprised of four centimeter measurements (petal and sepal, both length and width) stored as Float64, and a class variable, which is an object and indicates which species of flower the measurements were taken from. There are no NaN values.
+The data is comprised of four centimeter measurements (petal and sepal, both length and width) stored as Float64, and a class variable, which is an Object and indicates which species of flower the measurements were taken from. There are no NaN values.
+
+## Visualisations
+Below are some data visualisations that I generated in the course of my analysis.
+
+![Histogram distributions of the quantitative variables in the Iris dataset](Iris - distribution of quantitative variables.png)
 
 ## Modules
 I made use of the following modules as part of this project.
