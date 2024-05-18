@@ -3,11 +3,11 @@
 # analysis of the well-known Fisher’s Iris data set
 
 # Importing modules for use in analysis
-import pandas as pd # for data manipulation and analysis
-import numpy as np # 
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression as lr
+import pandas as pd # for dataframes and analysis
+import numpy as np # for numerical operations
+import seaborn as sns # for creating visualisations
+import matplotlib.pyplot as plt # for plotting
+from sklearn.linear_model import LinearRegression as lr # to predict values
 import warnings # to ignore Seaborn pairplot warning 'FutureWarning: use_inf_as_na'
 warnings.filterwarnings('ignore')
 

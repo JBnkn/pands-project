@@ -18,15 +18,20 @@ The data is comprised of four centimeter measurements (petal and sepal, both len
 ## Visualisations
 Below are some data visualisations that I generated in the course of my analysis.
 
-![Histogram distributions of the quantitative variables in the Iris dataset](Iris - distribution of quantitative variables.png)
+<img src="https://raw.githubusercontent.com/JBnkn/pands-project/main/Iris%20-%20distribution%20of%20quantitative%20variables.png" alt="A histogram summary of each quantitative variable in the Iris dataset" width="600">
+
+<img src="https://raw.githubusercontent.com/JBnkn/pands-project/main/Iris%20-%20scatterplot%20Seaborn%20pairplot.png" alt="A pairplot of each quantitative variable in the Iris dataset" width="600">
+
+<img src="https://raw.githubusercontent.com/JBnkn/pands-project/main/Iris%20-%20correlation%20heatmap.png" alt="A correlation heatmap of each quantitative variable in the Iris dataset" width="600">
 
 ## Modules
 I made use of the following modules as part of this project.
-- [pandas](https://pandas.pydata.org/)
-- [pyplot](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html)
-- [seaborn](https://seaborn.pydata.org/tutorial/introduction.html)
-- [numpy](https://numpy.org/)
-- [scikit-learn](https://scikit-learn.org/stable/)
+- [pandas](https://pandas.pydata.org/) for dataframes and analysis
+- [pyplot](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html) for plotting
+- [seaborn](https://seaborn.pydata.org/tutorial/introduction.html) for creating visualisations
+- [numpy](https://numpy.org/) for numerical operations
+- [scikit-learn](https://scikit-learn.org/stable/) to predict values
+- [fetch_ucirepo](https://github.com/uci-ml-repo/ucimlrepo) to import the dataset
 
 ## References
 - https://www.w3schools.com/python/python_file_write.asp
