@@ -8,7 +8,7 @@ This repository contains my analysis of the famous [Iris flower dataset](https:/
 ## The Dataset
 In 1936, British statistician (and mathematician, and biologist, and geneticist, and more) [Ronald Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher) published his paper [_The use of multiple measurements in taxonomic problems_](https://lgross.utk.edu/Math589Fall2020/RAFisher1936measurementsFlowerTaxa.pdf). To gather the data for this paper, Fisher captured measurements of 150 Iris flowers, evenly distributed across three species of the flower (Setosa, Versicolor, and Virginica). For each flower, Fisher noted the petal length, petal width, sepal length, and sepal width. Typically, petals are brightly coloured, surrounding the reproductive structures of flowers, while sepals are more leaf-like, and enclose the bud of the flower.
 
-<img src="https://content.codecademy.com/programs/machine-learning/k-means/iris.svg" alt="A image indicating the petal and sepal for the Versicolor, Setosa, and Virginica species of Iris flower. Credit: https://www.codecademy.com/" width="600">
+<img src="https://content.codecademy.com/programs/machine-learning/k-means/iris.svg" alt="A image indicating the petal and sepal for the Versicolor, Setosa, and Virginica species of Iris flower. Credit: https://www.codecademy.com/" width="800">
 
 With this data, Fisher developed a linear discriminant model to distinguish the species from each other. As a clean, complete, and relatively simple dataset, it is a useful sandbox for those of us taking our first steps into the world of Data Science.
 
@@ -18,11 +18,11 @@ The data is comprised of four centimeter measurements (petal and sepal, both len
 ## Visualisations
 Below are some data visualisations that I generated in the course of my analysis.
 
-<img src="https://raw.githubusercontent.com/JBnkn/pands-project/main/Iris%20-%20distribution%20of%20quantitative%20variables.png" alt="A histogram summary of each quantitative variable in the Iris dataset" width="600">
+<img src="https://raw.githubusercontent.com/JBnkn/pands-project/main/Iris%20-%20distribution%20of%20quantitative%20variables.png" alt="A histogram summary of each quantitative variable in the Iris dataset" width="800">
 
-<img src="https://raw.githubusercontent.com/JBnkn/pands-project/main/Iris%20-%20scatterplot%20Seaborn%20pairplot.png" alt="A pairplot of each quantitative variable in the Iris dataset" width="600">
+<img src="https://raw.githubusercontent.com/JBnkn/pands-project/main/Iris%20-%20scatterplot%20Seaborn%20pairplot.png" alt="A pairplot of each quantitative variable in the Iris dataset" width="800">
 
-<img src="https://raw.githubusercontent.com/JBnkn/pands-project/main/Iris%20-%20correlation%20heatmap.png" alt="A correlation heatmap of each quantitative variable in the Iris dataset" width="600">
+<img src="https://raw.githubusercontent.com/JBnkn/pands-project/main/Iris%20-%20correlation%20heatmap.png" alt="A correlation heatmap of each quantitative variable in the Iris dataset" width="800">
 
 ## Modules
 I made use of the following modules as part of this project.
