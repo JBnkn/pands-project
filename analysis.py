@@ -7,7 +7,6 @@ import pandas as pd # for dataframes and analysis
 import numpy as np # for numerical operations
 import seaborn as sns # for creating visualisations
 import matplotlib.pyplot as plt # for plotting
-from sklearn.linear_model import LinearRegression as lr # to predict values
 import warnings # to ignore Seaborn pairplot warning 'FutureWarning: use_inf_as_na'
 warnings.filterwarnings('ignore')
 

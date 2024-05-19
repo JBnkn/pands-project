@@ -39,7 +39,6 @@ I made use of the following modules as part of this project.
 - [pyplot](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html) for plotting
 - [seaborn](https://seaborn.pydata.org/tutorial/introduction.html) for creating visualisations
 - [numpy](https://numpy.org/) for numerical operations
-- [scikit-learn](https://scikit-learn.org/stable/) to predict values
 - [fetch_ucirepo](https://github.com/uci-ml-repo/ucimlrepo) to import the dataset
 
 ## References
@@ -48,6 +47,5 @@ I made use of the following modules as part of this project.
 - https://seaborn.pydata.org/generated/seaborn.pairplot.html
 - https://seaborn.pydata.org/generated/seaborn.heatmap.html
 - https://numpy.org/
-- https://scikit-learn.org/stable/
 - I occasionally made use of [ChatGPT](https://chat.openai.com/) throughout the course of my projects. It was a useful tool for debugging code that wasn't working for me and I had reached a dead end with the documentation. When I found complex pieces of code elsewhere, it was helpful at explaining the code line-by-line which aided my comprehension of the code.
 - I made use of a variety the YouTube videos in the course of my research, including (but not limited to) [b001](https://www.youtube.com/@b001), [Indently](https://www.youtube.com/@Indently), [Bro Code](https://www.youtube.com/@BroCodez), and [Koolac](https://www.youtube.com/@Koolac)
